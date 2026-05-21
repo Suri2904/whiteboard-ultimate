@@ -1,0 +1,245 @@
+.drawing-canvas-container {
+  position: fixed;
+  inset: 0;
+  background: var(--bg-app);
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+}
+
+.drawing-top-toolbar {
+  height: 60px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 16px;
+  z-index: var(--z-toolbar);
+}
+
+.back-btn {
+  min-width: auto;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--samsung-blue);
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.back-btn:hover {
+  background: var(--samsung-blue-light);
+}
+
+.drawing-title-input {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: transparent;
+  transition: var(--transition-fast);
+}
+
+.drawing-title-input:focus {
+  background: var(--bg-app);
+}
+
+.top-toolbar-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  position: relative;
+}
+
+.toolbar-action-btn {
+  min-width: auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  border-radius: 8px;
+  background: var(--bg-app);
+  transition: var(--transition-fast);
+}
+
+.toolbar-action-btn:hover {
+  background: var(--samsung-blue-light);
+  color: var(--samsung-blue);
+}
+
+.delete-btn {
+  min-width: auto;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #D32F2F;
+  border-radius: 8px;
+  background: #FFEBEE;
+  transition: var(--transition-fast);
+}
+
+.delete-btn:hover {
+  background: #FFCDD2;
+}
+
+.page-size-menu,
+.background-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 8px;
+  background: var(--bg-card);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 180px;
+  z-index: var(--z-dropdown);
+}
+
+.page-size-menu {
+  min-width: 220px;
+}
+
+.menu-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.menu-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 4px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.page-size-menu button,
+.background-menu button {
+  min-width: auto;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 14px;
+  border-radius: 6px;
+  transition: var(--transition-fast);
+  position: relative;
+  color: var(--text-primary);
+}
+
+.page-size-menu button:hover,
+.background-menu button:hover {
+  background: var(--samsung-blue-light);
+  color: var(--samsung-blue);
+}
+
+.page-size-menu button.active {
+  background: var(--samsung-blue-light);
+  color: var(--samsung-blue);
+  font-weight: 500;
+}
+
+.page-size-menu button.active::after {
+  content: '✓';
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-weight: bold;
+}
+
+.canvas-wrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawing-canvas {
+  cursor: crosshair;
+  background: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: calc(var(--z-modal) + 1);
+}
+
+.modal-content {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.modal-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.btn-cancel,
+.btn-delete {
+  min-width: 80px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: var(--transition-fast);
+}
+
+.btn-cancel {
+  background: var(--bg-app);
+  color: var(--text-primary);
+}
+
+.btn-cancel:hover {
+  background: var(--border);
+}
+
+.btn-delete {
+  background: #D32F2F;
+  color: white;
+}
+
+.btn-delete:hover {
+  background: #B71C1C;
+}

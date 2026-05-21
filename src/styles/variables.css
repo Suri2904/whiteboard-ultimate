@@ -1,0 +1,111 @@
+:root {
+  /* Samsung Design Tokens */
+  --samsung-blue: #1259C3;
+  --samsung-blue-light: #E8F0FD;
+  --bg-app: #F4F4F4;
+  --bg-card: #FFFFFF;
+  --bg-sidebar: #FFFFFF;
+  --text-primary: #1A1A1A;
+  --text-secondary: #6B6B6B;
+  --border: #E0E0E0;
+  --shadow: 0 2px 8px rgba(0,0,0,0.08);
+  --radius-card: 16px;
+  --sidebar-width: 320px;
+
+  /* Note Colors */
+  --note-white: #FFFFFF;
+  --note-yellow: #FFF9C4;
+  --note-green: #C8E6C9;
+  --note-blue: #BBDEFB;
+  --note-purple: #E1BEE7;
+  --note-pink: #F8BBD0;
+  --note-orange: #FFE0B2;
+  --note-dark: #424242;
+
+  /* Drawing Palette - Samsung Exact Colors */
+  --palette-black: #000000;
+  --palette-gray-dark: #434343;
+  --palette-gray: #666666;
+  --palette-gray-light: #999999;
+  --palette-gray-lighter: #CCCCCC;
+  --palette-white: #FFFFFF;
+  --palette-red: #FF0000;
+  --palette-orange-red: #FF4500;
+  --palette-dark-orange: #FF8C00;
+  --palette-gold: #FFD700;
+  --palette-green-yellow: #ADFF2F;
+  --palette-spring-green: #00FF7F;
+  --palette-deep-sky-blue: #00BFFF;
+  --palette-samsung-blue: #1259C3;
+  --palette-blue-violet: #8A2BE2;
+  --palette-deep-pink: #FF1493;
+  --palette-hot-pink: #FF69B4;
+  --palette-sienna: #A0522D;
+
+  /* Typography */
+  --font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-title: 22px;
+  --font-size-body: 16px;
+  --font-size-caption: 12px;
+  --font-weight-bold: 700;
+  --font-weight-regular: 400;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-index */
+  --z-toolbar: 100;
+  --z-modal: 1000;
+  --z-dropdown: 500;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  color: var(--text-primary);
+  background: var(--bg-app);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  outline: none;
+}

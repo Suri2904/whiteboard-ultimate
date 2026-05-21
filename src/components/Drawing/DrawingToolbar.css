@@ -1,0 +1,154 @@
+.drawing-toolbar {
+  position: fixed;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--bg-card);
+  border-radius: 0 12px 12px 0;
+  box-shadow: var(--shadow);
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: var(--z-toolbar);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.toolbar-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+}
+
+.toolbar-divider {
+  width: 32px;
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+.tool-btn,
+.size-btn,
+.undo-btn,
+.redo-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.tool-btn:hover,
+.size-btn:hover,
+.undo-btn:hover,
+.redo-btn:hover {
+  background: var(--samsung-blue-light);
+}
+
+.tool-btn.active,
+.size-btn.active {
+  background: var(--samsung-blue);
+  color: white;
+  border-color: var(--samsung-blue);
+}
+
+.tool-btn:disabled,
+.size-btn:disabled,
+.undo-btn:disabled,
+.redo-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.tool-icon {
+  font-size: 20px;
+}
+
+.size-dot {
+  background: currentColor;
+  border-radius: 50%;
+  transition: var(--transition-fast);
+}
+
+.size-btn.active .size-dot {
+  background: white;
+}
+
+.color-section {
+  gap: 6px;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  padding: 4px;
+}
+
+.color-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.active {
+  border-color: var(--samsung-blue);
+  box-shadow: 0 0 0 2px white inset;
+}
+
+.custom-color-wrapper {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  margin-top: 4px;
+}
+
+.custom-color-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  opacity: 0;
+}
+
+.custom-color-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--text-secondary);
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+.undo-section {
+  margin-top: 8px;
+}
+
+.undo-btn,
+.redo-btn {
+  font-size: 20px;
+  font-weight: bold;
+}

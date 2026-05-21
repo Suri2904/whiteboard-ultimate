@@ -1,0 +1,114 @@
+.page-manager {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-card);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: var(--z-toolbar);
+}
+
+.page-nav-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.page-nav-btn:hover:not(:disabled) {
+  background: var(--samsung-blue-light);
+  color: var(--samsung-blue);
+}
+
+.page-nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  min-width: 100px;
+  text-align: center;
+}
+
+.page-delete-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #FFEBEE;
+  font-size: 16px;
+  color: #D32F2F;
+  transition: var(--transition-fast);
+}
+
+.page-delete-btn:hover {
+  background: #FFCDD2;
+  transform: scale(1.05);
+}
+
+.page-add-btn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 20px;
+  background: var(--samsung-blue);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--transition-fast);
+}
+
+.page-add-btn:hover {
+  background: #0f4a9c;
+  transform: scale(1.05);
+}
+
+/* Page deletion modal */
+.page-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: calc(var(--z-modal) + 2);
+}
+
+.page-modal-content {
+  background: var(--bg-card);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.page-modal-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.page-modal-content p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.page-modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
